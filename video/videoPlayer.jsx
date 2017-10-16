@@ -1,9 +1,9 @@
 const React        = require('react');
 
 require('!style-loader!css-loader!video.js/dist/video-js.min.css');
-require('!style-loader!css-loader!../../style/videoPlayer1.css');
+require('!style-loader!css-loader!../style/videoPlayer1.css');
 
-var styles = require('../../style/videoPlayer2.css');
+var styles = require('../style/videoPlayer2.css');
 
 import videojs from 'video.js';
 

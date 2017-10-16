@@ -2,9 +2,9 @@ const React = require('react');
 
 require('!style-loader!css-loader!video.js/dist/video-js.min.css');
 require('!style-loader!css-loader!videojs-record/dist/css/videojs.record.min.css');
-require('!style-loader!css-loader!../../style/videoPlayer1.css');
+require('!style-loader!css-loader!../style/videoPlayer1.css');
 
-var styles = require('../../style/videoRecorder.css');
+var styles = require('../style/videoRecorder.css');
 
 var videojs = require('video.js');
 import recordRTC from 'recordrtc';

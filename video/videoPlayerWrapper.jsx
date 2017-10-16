@@ -10,7 +10,7 @@ const VideoPlayerWrapper = React.createClass({
 	},
 	componentDidMount:function(){
         require.ensure([], (require) => {
-              this.setState({videoPlayer:require('alpha-client-lib/partials/video/videoPlayer')});
+              this.setState({videoPlayer:require('xbuilder-templates/video/videoPlayer')});
         });
 	},
 	showVideo:function(){

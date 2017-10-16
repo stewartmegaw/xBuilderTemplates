@@ -4,8 +4,8 @@ Some nice info on the difference between layoutExtended & layoutWrapper
 https://medium.com/@franleplant/react-higher-order-components-in-depth-cf9032ee6c3e#.t3r6zwj02
 */
 
-const AppState = require('alpha-client-lib/lib/appState');
-const PopupMessage = require('alpha-client-lib/partials/helpers/bottomPopupMessage');
+const AppState = require('xbuilder-core/lib/appState');
+const PopupMessage = require('xbuilder-core/helpers/bottomPopupMessage');
 const param = require("jquery-param");
 const parseUrl = require('parse-url');
 
@@ -16,7 +16,7 @@ if(!serverSide)
 }
 
 /*
-Move this and the render code to a reusable alpha-client-lib module
+Move this and the render code to a reusable xbuilder-core module
 */
 var uaTests = AppState.getProp('config.browserDetect',[]);
 var uaTestFails = [];

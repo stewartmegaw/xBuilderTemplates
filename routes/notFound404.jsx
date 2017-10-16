@@ -1,6 +1,6 @@
 var React = require('react');
 
-const AppState = require('alpha-client-lib/lib/appState');
+const AppState = require('xbuilder-core/lib/appState');
 
 var NotFound404 = React.createClass({
     render: function() {

@@ -38,7 +38,7 @@ import ReactDOM from 'react-dom'
 
 const {Link} = require('react-router');
 
-import styles from '../../style/list.css';
+import styles from '../style/list.css';
 
 const List = React.createClass({
 	getInitialState:function(){
