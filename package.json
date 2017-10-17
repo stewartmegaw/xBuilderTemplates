@@ -18,6 +18,6 @@
   "homepage": "https://github.com/stewartmegaw/xBuilderTemplates#readme",
   "devDependencies": {},
   "dependencies": {
-    "xbuilder-core": "git+https://90c8cbd971fd98f825777e93b9c54a2c78213c2b:x-oauth-basic@github.com/stewartmegaw/xBuilderCore.git",
+    "xbuilder-core": "git+https://90c8cbd971fd98f825777e93b9c54a2c78213c2b:x-oauth-basic@github.com/stewartmegaw/xBuilderCore.git"
   }
 }
