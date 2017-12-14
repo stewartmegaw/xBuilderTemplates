@@ -15,9 +15,8 @@ if(!serverSide)
 	window.emitter = new window.EventPubSub();
 }
 
-/*
-Move this and the render code to a reusable xbuilder-core module
-*/
+
+
 var uaTests = AppState.getProp('config.browserDetect',[]);
 var uaTestFails = [];
 if(uaTests.length)
@@ -66,6 +65,7 @@ if(uaTests.length)
 			uaTestFails.push(testSet.msg);
 	}
 }
+
 
 
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
