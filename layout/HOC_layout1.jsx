@@ -13,8 +13,14 @@ if(!serverSide)
 {     
 	require('script-loader!event-pubsub/event-pubsub-browser.js');
 	window.emitter = new window.EventPubSub();
-}
 
+	// Print the appState to console if not in production
+	if(!_prod)
+	{
+		console.log(JSON.stringify(appState, true, 2));
+		console.log(appState);
+	}
+}
 
 
 var uaTests = AppState.getProp('config.browserDetect',[]);

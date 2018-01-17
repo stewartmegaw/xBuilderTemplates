@@ -43,27 +43,48 @@ import styles from '../style/list.css';
 const List = React.createClass({
 	getInitialState:function(){
 		var collapsed = [];
+		var checked = this.props.checked || [];
 		var _this = this;
 
-		function getDefaultCollapsed(listArray, root) {
+		function getDefaultCollapsed(listArray, parentIds) {
 			for(var j = 0; j < listArray.length; j++)
 			{
 				if(listArray[j].constructor !== Array)
 				{
 					var hasChildren = listArray.length > j + 1 && listArray[j+1].constructor === Array;
-					if(_this.props.showToggles && hasChildren && !root)
-						collapsed.push(listArray[j].id);
+
+					// If we find a child that is checked then none of the parents should
+					// be collapsed - as we want the checked item to be visible
+					// Note. Convert id to string as the 'checked array' contains strings 
+					if(checked.indexOf(listArray[j].id.toString()) > -1)
+					{
+						for(var i = 0; i<parentIds.length; i++)
+						{
+							var collapsed_idx = collapsed.indexOf(parentIds[i]);
+							if(collapsed_idx>-1)
+								collapsed.splice(collapsed_idx,1);
+						}	
+					}
+
 					if(hasChildren)
-						getDefaultCollapsed(listArray[j+1]);
+					{
+						if(parentIds.length > 0) // Should not collapse the root element
+							collapsed.push(listArray[j].id);
+
+						var _parentIds = parentIds.slice();
+						_parentIds.push(listArray[j].id);
+						getDefaultCollapsed(listArray[j+1], _parentIds);
+					}
 				}
 			}
-
 		}
-		getDefaultCollapsed(this.props.listArray, true);
+
+		if(_this.props.showToggles)
+			getDefaultCollapsed(this.props.listArray, []);
 
 		return {
 			collapsed:collapsed,
-			checked:this.props.checked || [],
+			checked:checked,
 			disabled:[],
 			hidden:{} // used in conjunction with p.hideMoreThan
 		}
